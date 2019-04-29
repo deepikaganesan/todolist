@@ -1,0 +1,23 @@
+<ul>
+{% for task in tasks %}
+    <li>
+        {% if task.done %} <strike> {% endif %}{{ task.content }} {% if task.done %} </strike>{% endif %}
+        <a href="/done/{{ task.id }}">cut</a>
+        <a href="/delete/{{ task.id }}">Delete entry</a>
+        
+        
+    
+    </li>
+{% endfor %}
+</ul>
+
+
+<form action="/task" method="post">
+    <h1> todo list </h1>
+    <p><input type="text" name="content"></p>
+    <input type="submit" class="btn btn-info" value="add new entry">
+    
+</form>
+
+
+
